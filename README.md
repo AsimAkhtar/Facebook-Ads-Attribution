@@ -11,6 +11,11 @@ Should be added on the AD LEVEL.
 
 ![image](https://user-images.githubusercontent.com/87388055/125772183-593d4df8-edd0-40db-826d-b55966a3bde7.png)
 
+Looks like this once done if you add the URL parameter column.
+
+![image](https://user-images.githubusercontent.com/87388055/125774851-c0f83f02-5d17-4c6a-86d0-89b310f305cc.png)
+
+
 ### REPORTING:
 
 To read the data:
