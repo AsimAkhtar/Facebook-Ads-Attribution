@@ -60,6 +60,11 @@ Is there an easier way? Ish.
 I could create an app that integrates Shopify + Facebook, but it would only save you a 3-5 minutes of time, and waste weeks of mine.
 
 You could also create a program that does the end bit (combining the CSV files) and making data look pretty, but it would probably only save you a few minutes.
+>> I did this with main2.py -- you will have to install python and use pip install pandas csv os
+>> You will also have to have your "Facebook.csv" and "Shopify.csv" in the same folder as main2.py
+>> Output folder will be called Final Sorted CSV and give you something like this:
+
+![image](https://user-images.githubusercontent.com/87388055/125993589-8cb7f99a-fccd-4ee0-87f6-17943ee1a5dd.png)
 
 You SHOULD NOT be checking your ad sets every single day regardless, so 5 minutes per 3-4 days/week is negligible.
 
