@@ -60,9 +60,18 @@ Is there an easier way? Ish.
 I could create an app that integrates Shopify + Facebook, but it would only save you a 3-5 minutes of time, and waste weeks of mine.
 
 You could also create a program that does the end bit (combining the CSV files) and making data look pretty, but it would probably only save you a few minutes.
+
 >> I did this with main2.py -- you will have to install python and use pip install pandas csv os
->> You will also have to have your "Facebook.csv" and "Shopify.csv" in the same folder as main2.py
->> Output folder will be called Final Sorted CSV and give you something like this:
+
+
+>> You will also have to have your "Facebook.csv" (Facebook adsmanager export on "Ad set" level) and "Shopify.csv" (Shopify reports with "total_orders_placed" = sessions converted and "utm_campaign_term" columns in the same folder as main2.py
+
+Feel free to adjust main2.py if you need a solution for viewing ad sets, should be fairly simple. Instead of sorting by ad set IDs, sort by ad IDs and use an "ad" export instead of "ad set id"
+
+>> Note: I only use 1 creative per ad set. You probably should too. 2-3 creatives doesn't work well these days due to iOS updates.
+
+
+>> Output file will be called Final Sorted CSV and give you something like this:
 
 ![image](https://user-images.githubusercontent.com/87388055/125993589-8cb7f99a-fccd-4ee0-87f6-17943ee1a5dd.png)
 
