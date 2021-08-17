@@ -18,22 +18,28 @@ with open(FACEBOOK_ADSETS_FILE, newline='') as f:
 facebook_first_col = facebook_data[0]
 
 for z in range(len(facebook_first_col)):
-    if "spent" in facebook_first_col[z]:
+    if "Spent" in facebook_first_col[z]:
         spent_val = z
-    if "Ad set ID" in facebook_first_col[z]:
+    if "Ad Set ID" in facebook_first_col[z]:
         adsetid_val = z
+    if "Ad Set Name" in facebook_first_col[z]:
+        adsetname_val = z
 
 spent_list = []
 adsetid_list = []
+adsetname_list = []
 
 for y in range(len(facebook_data)):
-    if "spent" not in facebook_data[y][spent_val]:
+    if "Spent" not in facebook_data[y][spent_val]:
         spent_list.append(str(facebook_data[y][spent_val]))
 
 for y in range(len(facebook_data)):
-    if "Ad set ID" not in facebook_data[y][adsetid_val]:
+    if "Ad Set ID" not in facebook_data[y][adsetid_val]:
         adsetid_list.append(str(facebook_data[y][adsetid_val]))
 
+for y in range(len(facebook_data)):
+    if "Ad Set Name" not in facebook_data[y][adsetname_val]:
+        adsetname_list.append(str(facebook_data[y][adsetname_val]))
 
 # SHOPIFY LIST CREATING THING
 
@@ -59,7 +65,6 @@ for y in range(len(shopify_data)):
 for y in range(len(shopify_data)):
     if "orders_placed" not in shopify_data[y][ordersplaced_val]:
         ordersplaced_list.append(str(shopify_data[y][ordersplaced_val]))
-
 
 # COMPARING SHOPIFY DATA TO FACEBOOK DATA
 
@@ -96,7 +101,25 @@ for x in range(len(new_spent_list)):
     cpp = round(cpp, 2)
     cpp_list.append(str(cpp))
 
-rows = zip(campaign_list,new_spent_list,ordersplaced_list,cpp_list)
+
+
+new_adsetname_list = ["ASDF"] * len(campaign_list)
+
+ss = -1
+
+""" for adsetid in adsetid_list:
+    index3 = campaign_list.index(adsetid)
+    ss += 1
+    new_adsetname_list[index3] = adsetname_list[ss]
+
+for adsetid in campaign_list: # Shopify
+    if adsetid in adsetid_list: # Facebook
+        index1 = adsetid_list.index(adsetid)
+        index2 = adsetname_list.index(adsetid)
+        new_adsetname_list[index2] = adsetname_list[index1] """
+
+
+rows = zip(new_adsetname_list,campaign_list,new_spent_list,ordersplaced_list,cpp_list)
 
 with open(SORTED_CSV, "w") as f:
     writer = csv.writer(f)
@@ -108,7 +131,7 @@ df.to_csv(FINAL_SORTED_CSV, index=False)
 
 df = pd.read_csv(FINAL_SORTED_CSV, 
                   sep=',', 
-                  names=["Ad set ID", "Amount Spent","Purchases", "Cost Per Purchase"])
+                  names=["Ad set name", "Ad set ID", "Amount Spent","Purchases", "Cost Per Purchase"])
 
 df.to_csv(FINAL_SORTED_CSV, index=False)
 
