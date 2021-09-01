@@ -66,7 +66,7 @@ You could also create a program that does the end bit (combining the CSV files) 
 
 >> You will also have to have your "Facebook.csv" (Facebook adsmanager export on "Ad set" level) and "Shopify.csv" (Shopify reports with "total_orders_placed" = sessions converted and "utm_campaign_term" columns in the same folder as main2.py
 
-Feel free to adjust main2.py if you need a solution for viewing ad sets, should be fairly simple. Instead of sorting by ad set IDs, sort by ad IDs and use an "ad" export instead of "ad set id"
+Feel free to adjust main2.py if you need a solution for viewing individual ads, should be fairly simple. Instead of sorting by ad set IDs, sort by ad IDs and use an "ad" export instead of "ad set id"
 
 >> Note: I only use 1 creative per ad set. You probably should too. 2-3 creatives doesn't work well these days due to iOS updates.
 
