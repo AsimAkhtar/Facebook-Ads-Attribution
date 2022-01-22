@@ -18,9 +18,9 @@ with open(FACEBOOK_ADSETS_FILE, newline='') as f:
 facebook_first_col = facebook_data[0]
 
 for z in range(len(facebook_first_col)):
-    if "Spent" in facebook_first_col[z]:
+    if "spent" in facebook_first_col[z]:
         spent_val = z
-    if "Ad Set ID" in facebook_first_col[z]:
+    if "Ad set ID" in facebook_first_col[z]:
         adsetid_val = z
     if "Ad Set Name" in facebook_first_col[z]:
         adsetname_val = z
@@ -30,11 +30,11 @@ adsetid_list = []
 adsetname_list = []
 
 for y in range(len(facebook_data)):
-    if "Spent" not in facebook_data[y][spent_val]:
+    if "spent" not in facebook_data[y][spent_val]:
         spent_list.append(str(facebook_data[y][spent_val]))
 
 for y in range(len(facebook_data)):
-    if "Ad Set ID" not in facebook_data[y][adsetid_val]:
+    if "Ad set ID" not in facebook_data[y][adsetid_val]:
         adsetid_list.append(str(facebook_data[y][adsetid_val]))
 
 for y in range(len(facebook_data)):
@@ -131,7 +131,7 @@ df.to_csv(FINAL_SORTED_CSV, index=False)
 
 df = pd.read_csv(FINAL_SORTED_CSV, 
                   sep=',', 
-                  names=["Ad set name", "Ad set ID", "Amount Spent","Purchases", "Cost Per Purchase"])
+                  names=["Ad set name", "Ad set ID", "Amount spent","Purchases", "Cost Per Purchase"])
 
 df.to_csv(FINAL_SORTED_CSV, index=False)
 
